@@ -1,3 +1,4 @@
+import ind.glowingstone.MessageConstructor
 import java.util.logging.Level
 
 class PluginMain : Plugin {
@@ -10,7 +11,7 @@ class PluginMain : Plugin {
     override fun start(logger: SimpleLogger) {
         logger.log("hello,World", Level.INFO)
     }
-    @Annonations.PlainHandler
+    @Annonations.PlainHandler(MessageConstructor.Types.PLAIN)
     fun doSomething(event: Events.MajorEvent) {
         println("MyPlugin 正在做一些事情...")
         println("recived: ${event.sender.uid} ${event.sender.nickname}")
