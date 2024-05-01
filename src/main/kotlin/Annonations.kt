@@ -1,4 +1,5 @@
-package ind.glowingstone
+import ind.glowingstone.MessageConstructor
+
 
 class Annonations {
     @Retention(AnnotationRetention.RUNTIME)

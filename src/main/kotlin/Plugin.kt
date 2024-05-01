@@ -1,3 +1,3 @@
 internal interface Plugin {
-    fun start()
+    fun start(logger: SimpleLogger)
 }

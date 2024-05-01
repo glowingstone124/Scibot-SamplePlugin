@@ -1,8 +1,9 @@
-import ind.glowingstone.Annonations
+import java.util.logging.Level
 
 class MyPlugin : Plugin {
-    override fun start() {
-        println("MyPlugin 已启动！")
+
+    override fun start(logger: SimpleLogger) {
+        logger.log("hello,World", Level.INFO)
     }
     @Annonations.PlainHandler
     fun doSomething(event: Events.MajorEvent) {
