@@ -1,6 +1,6 @@
 import java.util.logging.Level
 
-class MyPlugin : Plugin {
+class PluginMain : Plugin {
 
     override fun start(logger: SimpleLogger) {
         logger.log("hello,World", Level.INFO)
