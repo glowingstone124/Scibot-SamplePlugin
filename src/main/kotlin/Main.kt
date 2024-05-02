@@ -19,8 +19,10 @@ class PluginMain : Plugin {
     @Annonations.PlainHandler(MessageConstructor.Types.PLAIN)
     fun doSomething(event: Events.MajorEvent) {
         println("MyPlugin called")
-        if (event.detail is Events.PlainMessage) {
-            println("recived: ${event.sender.uid} ${event.detail.message}")
+        for (any in event.msgArr) {
+            if(any is Events.PlainMessage) {
+                println("recived message: ${any.message} from ${event.sender.uid}")
+            }
         }
     }
 }
