@@ -1,12 +1,10 @@
-import ind.glowingstone.MessageConstructor
-
-
+import ind.glowingstone.MessageConstructor.Types
 class Annonations {
     @Retention(AnnotationRetention.RUNTIME)
     @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
-    annotation class PlainHandler(val type: MessageConstructor.Types = MessageConstructor.Types.PLAIN)
+    annotation class PlainHandler(val type:Types = Types.PLAIN)
 
     @Retention(AnnotationRetention.RUNTIME)
     @Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
-    annotation class PrivateHandler(val type: MessageConstructor.Types = MessageConstructor.Types.PLAIN)
+    annotation class PrivateHandler(val type: Types = Types.PLAIN)
 }

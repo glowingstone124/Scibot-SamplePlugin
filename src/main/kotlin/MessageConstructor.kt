@@ -1,7 +1,4 @@
 package ind.glowingstone
-import org.json.JSONArray
-import org.json.JSONObject
-
 class MessageConstructor {
     enum class Types {
         PLAIN,
@@ -13,5 +10,5 @@ class MessageConstructor {
         SHARE,
         REPLY
     }
-
+    data class MsgSeg(val type: Types, val msg: String)
 }

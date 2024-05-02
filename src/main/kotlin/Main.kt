@@ -2,18 +2,25 @@ import ind.glowingstone.MessageConstructor
 import java.util.logging.Level
 
 class PluginMain : Plugin {
+    var sender: SimpleSender? = null
+    var logger: SimpleLogger? = null
     /*
     This is the sample plugin of SciBot.
     Define Main class and Plugin Name in resources/plugin.yml
     use @PlainHandler to create an event handler.
     implements Plugin interface to create a main class.
      */
-    override fun start(logger: SimpleLogger) {
+    override suspend fun start(logger: SimpleLogger, sender: SimpleSender) {
         logger.log("hello,World", Level.INFO)
+        this.sender = sender
+        this.logger = logger
+        sender.plainSend("hello,world", Sender.Type.GROUP,10000)
     }
     @Annonations.PlainHandler(MessageConstructor.Types.PLAIN)
     fun doSomething(event: Events.MajorEvent) {
-        println("MyPlugin 正在做一些事情...")
-        println("recived: ${event.sender.uid} ${event.sender.nickname}")
+        println("MyPlugin called")
+        if (event.detail is Events.PlainMessage) {
+            println("recived: ${event.sender.uid} ${event.detail.message}")
+        }
     }
 }
