@@ -14,7 +14,7 @@ class PluginMain : Plugin {
         logger.log("hello,World", Level.INFO)
         this.sender = sender
         this.logger = logger
-        sender.plainSend("hello,world", Sender.Type.GROUP,10000)
+        sender.plainSend("hello,world", Sender.Type.GROUP,946085440)
     }
     @Annonations.PlainHandler(MessageConstructor.Types.PLAIN)
     fun doSomething(event: Events.MajorEvent) {
