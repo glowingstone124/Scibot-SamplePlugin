@@ -2,7 +2,7 @@ import ind.glowingstone.MessageConstructor
 import java.util.logging.Level
 
 interface Plugin {
-    suspend fun start(Logger: SimpleLogger, sender: SimpleSender)
+    suspend fun start()
 }
 interface SimpleSender{
     suspend fun plainSend(content: String, operation: Sender.Type, id: Long)
